@@ -7,6 +7,7 @@ from csaps import csaps
 from pygam import LogisticGAM, s, f
 
 from scipy.special import expit, logit
+from sklearn.model_selection import StratifiedKFold
 from sklearn.calibration import CalibratedClassifierCV, calibration_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import average_precision_score
@@ -71,7 +72,9 @@ class explainer:
         plt.show()
 
     def calibrate(self, cv=5):
-        self.calibrated_clf = CalibratedClassifierCV(self.clf, cv=cv, method='isotonic')
+        seed = 7
+        skf = StratifiedKFold(n_splits=cv, random_state=seed, shuffle=True)
+        self.calibrated_clf = CalibratedClassifierCV(self.clf, cv=skf, method='isotonic')
         self.calibrated_clf.fit(self.X_train, self.y_train)
 
     def calculate_kernel_shap(self):
