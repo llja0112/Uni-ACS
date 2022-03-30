@@ -66,9 +66,13 @@ class explainer:
             calibration_curve(self.y_test, y_pred, n_bins=n_bins)
 
         plt.plot(mean_predicted_value, fraction_of_positives, "s-")
+        plt.ylabel('Fraction of positives')
+        plt.xlabel('Mean predicted value')
         plt.show()
 
         plt.hist(y_pred, range=(0, 1), bins=n_bins, histtype="step", lw=2)
+        plt.ylabel('Count')
+        plt.xlabel('Mean predicted value')
         plt.show()
 
     def calibrate(self, cv=5):
