@@ -6,6 +6,7 @@ from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import StratifiedKFold
 from sklearn.calibration import CalibratedClassifierCV, calibration_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import average_precision_score
@@ -17,7 +18,8 @@ from scipy.special import expit, logit
 # import pdb
 
 class explainer:
-    def __init__(self, X_train, y_train, X_test, y_test, p_thresholds=[0.1, 0.5, 0.9]):
+    def __init__(self, X_train, y_train, X_test, y_test, p_thresholds=[0.1, 0.5, 0.9], seed=7):
+        self.seed = seed
         self.X_train = X_train
         self.y_train = y_train
         self.X_test = X_test
@@ -62,8 +64,11 @@ class explainer:
         self.fit_logreg()
 
         print('| Step 4 ==> Calibrating logistic regression model')
+
+        skf = StratifiedKFold(n_splits=5, random_state=self.seed, shuffle=True)
+
         self.plot_calibration_original()
-        self.calibrate()
+        self.calibrate(cv=skf)
         self.plot_calibration_calibrated()
 
         print('| Step 5 ==> Fit clinical score calculator')
@@ -143,7 +148,7 @@ class explainer:
 
         return range_arr
 
-    def find_features_categories_quantiles(self, quantiles=[0.05, 0.2, 0.8, 0.95]):
+    def find_features_categories_quantiles(self, quantiles=[0.2, 0.5, 0.8]):
         self.breakpoints_list = []
         self.X_train_new = pd.DataFrame()
         self.X_test_new = pd.DataFrame()

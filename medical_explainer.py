@@ -16,8 +16,9 @@ from sklearn.metrics import accuracy_score
 import pdb
 
 class explainer:
-    def __init__(self, clf, X_train, y_train, X_test, y_test, p_thresholds=[0.1, 0.5, 0.9], pipeline_clf='Log_Reg'):
+    def __init__(self, clf, X_train, y_train, X_test, y_test, p_thresholds=[0.1, 0.5, 0.9], pipeline_clf='Log_Reg', seed = 7):
         self.version = '0.1'
+        self.seed = seed
         self.clf = clf
         self.calibrated_clf = np.nan
         self.X_train = X_train
@@ -76,9 +77,7 @@ class explainer:
         plt.show()
 
     def calibrate(self, cv=5):
-        seed = 7
-        skf = StratifiedKFold(n_splits=cv, random_state=seed, shuffle=True)
-        self.calibrated_clf = CalibratedClassifierCV(self.clf, cv=skf, method='isotonic')
+        self.calibrated_clf = CalibratedClassifierCV(self.clf, cv=cv, method='isotonic')
         self.calibrated_clf.fit(self.X_train, self.y_train)
 
     def calculate_kernel_shap(self):
@@ -315,7 +314,7 @@ class explainer:
                 print(or_array)
                 print("")
 
-    def find_breakpoints_quantile(self, quantiles=[0.05, 0.2, 0.8, 0.95], verbose=False):
+    def find_breakpoints_quantile(self, quantiles=[0.2, 0.5, 0.8], verbose=False):
         df_quantiles = self.X_train[self.variables].quantile(quantiles)
         for i in range(len(self.variables)):
             variable = self.variables[i]
@@ -382,9 +381,11 @@ class explainer:
         self.or_array_list = []
         self.shap_max_score = 0
 
+        skf = StratifiedKFold(n_splits=5, random_state=self.seed, shuffle=True)
+
         print('| Step 1  ==> Calibrating model')
         self.plot_calibration_original()
-        self.calibrate()
+        self.calibrate(cv=skf)
         self.plot_calibration_calibrated()
         self.get_clf_performance()
         self.get_calibrated_clf_performance()
