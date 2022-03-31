@@ -47,7 +47,7 @@ class explainer:
     def fit(self, top_n, method = 'GAM'):
         print('| Step 1  ==> Selecting top n features')
         scaler = MinMaxScaler()
-        select = SelectKBest(chi2, k=10)
+        select = SelectKBest(chi2, k=top_n)
         select.fit(scaler.fit_transform(self.X_train), self.y_train)
         self.selected_features = select.get_feature_names_out(self.X_train.columns)
         if method == 'GAM':
@@ -148,7 +148,7 @@ class explainer:
 
         return range_arr
 
-    def find_features_categories_quantiles(self, quantiles=[0.2, 0.5, 0.8]):
+    def find_features_categories_quantiles(self, quantiles=[0.2, 0.8]):
         self.breakpoints_list = []
         self.X_train_new = pd.DataFrame()
         self.X_test_new = pd.DataFrame()
@@ -246,28 +246,25 @@ class explainer:
         self.beta_values = np.array(beta_values_list).sum(axis=0) / len(beta_values_list)
         self.intercept_value = np.array(intercept_values_list).mean()
 
-    def fit_calculator(self, threshold=0.05):
+    def fit_calculator(self, threshold=0.3, verbose=False):
         print('Fit clincal score calculator')
         self.calculate_beta_values()
         beta_values_no_zeros = self.beta_values[np.abs(self.beta_values) >= threshold]
         self.unit_beta_value = np.min(np.abs(beta_values_no_zeros))
         self.scores = np.rint(np.true_divide(self.beta_values, self.unit_beta_value))
-        self.scores = self.scores - np.min(self.scores)
+        min_score = np.min(self.scores)
+        self.scores = self.scores - min_score
 
         self.scoring_table = pd.DataFrame(columns=self.scoring_table_columns)
         self.scoring_thresholds = []
 
-        base_log_odds = self.intercept_value
-
-        for beta_value in self.beta_values:
-            if beta_value < 0:
-                base_log_odds += beta_value
+        self.base_log_odds = self.intercept_value + min_score * len(self.selected_features) * self.unit_beta_value
 
         max_value = sum(self.scores)
 
         for i in range(int(max_value) + 1):
             print('Score: ' + str(i))
-            log_odds = base_log_odds + self.unit_beta_value * i
+            log_odds = self.base_log_odds + self.unit_beta_value * i
 
             new_row = pd.DataFrame([[
                 i, expit(log_odds)
@@ -325,7 +322,8 @@ class explainer:
             i += 1
 
         scores = np.dot(df_converted.values, self.scores)
-        probs = expit(np.dot(df_converted.values, self.beta_values) + self.intercept_value)
+        probs = expit(scores * self.unit_beta_value + self.base_log_odds)
         predictions = (scores >= self.scoring_thresholds[threshold_choice]).astype(int)
 
         return scores, probs, predictions
+
