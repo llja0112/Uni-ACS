@@ -567,7 +567,8 @@ class explainer:
 
             prob = expit(i * self.unit_shap_value + self.expected_value)
             new_row = pd.DataFrame([[score, prob]],columns=self.scoring_table_columns)
-            self.scoring_table = self.scoring_table.append(new_row)
+            # self.scoring_table = self.scoring_table.append(new_row)
+            self.scoring_table = pd.concat([self.scoring_table, new_row])
 
             i += 1
 

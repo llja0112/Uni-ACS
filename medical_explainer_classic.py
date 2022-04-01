@@ -148,7 +148,7 @@ class explainer:
 
         return range_arr
 
-    def find_features_categories_quantiles(self, quantiles=[0.2, 0.8]):
+    def find_features_categories_quantiles(self, quantiles=[0.05, 0.2, 0.8, 0.95]):
         self.breakpoints_list = []
         self.X_train_new = pd.DataFrame()
         self.X_test_new = pd.DataFrame()
@@ -263,16 +263,19 @@ class explainer:
         max_value = sum(self.scores)
 
         for i in range(int(max_value) + 1):
-            print('Score: ' + str(i))
+            if verbose:
+                print('Score: ' + str(i))
             log_odds = self.base_log_odds + self.unit_beta_value * i
 
             new_row = pd.DataFrame([[
                 i, expit(log_odds)
             ]], columns=self.scoring_table_columns)
-            self.scoring_table = self.scoring_table.append(new_row)
+            # self.scoring_table = self.scoring_table.append(new_row)
+            self.scoring_table = pd.concat([self.scoring_table, new_row])
 
-            print('Probability: ' + str(expit(log_odds)))
-            print('')
+            if verbose:
+                print('Probability: ' + str(expit(log_odds)))
+                print('')
 
         for p_threshold in self.p_thresholds:
             print("Threshold:" + str(p_threshold))
@@ -280,6 +283,7 @@ class explainer:
                 self.scoring_table['Probability'] <= p_threshold
             ]['Score'].max()
             self.scoring_thresholds.append(score_threshold)
+            # self.scoring_thresholds = pd.concat([self.scoring_thresholds, score_threshold])
             print(score_threshold)
             print("")
 
