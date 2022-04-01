@@ -74,23 +74,24 @@ class explainer:
         print('| Step 5 ==> Fit clinical score calculator')
         self.fit_calculator()
 
-    def find_features_categories_gam(self):
-        index = 0
-        for feature in self.selected_features:
-            if len(self.X_train[feature].value_counts()) < 3:
-                g = f
-            else:
-                g = s
+    def find_features_categories_gam(self, equation=0):
+        if equation == 0:
+            index = 0
+            for feature in self.selected_features:
+                if len(self.X_train[feature].value_counts()) < 3:
+                    g = f
+                else:
+                    g = s
 
-            if index == 0:
-                equation = g(index)
-            else:
-                equation += g(index)
+                if index == 0:
+                    equation = g(index)
+                else:
+                    equation += g(index)
 
-            index += 1
+                index += 1
 
         # Get GAM response for individual features
-        self.gam = LogisticGAM(equation).gridsearch(
+        self.gam = LogisticGAM(equation).fit(
             self.X_train[self.selected_features].values, self.y_train)
 
         self.breakpoints_list = []
