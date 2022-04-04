@@ -1,7 +1,12 @@
-# Unified Automatic Clinical Scoring
+Uni-ACS (Unified Automatic Clinical Scoring) is a model agnostic approach to automatically generating clinical scores from SHAP compatibale clinical Machine Learning (ML) models. As Uni-ACS uses the original ML model and its explanations as a base for clinical score construction, it retains global and local interpretations of the original model, while promising to retain a significant proportion of the original ML model's predictive performance.
 
-## Introduction
-The application of Machine Learning (ML) models to clinical medicine faces the perennial problem of trust and interpretability. Modern ML interpretability tools, such as LIME, SHAP and explainable boosting machines, have made significant progress in explaining ML models' risk predictions in clinical problems such as heart failure, acute kidney injury, sepsis and hypoxaemia during surgery. However, these tools' ML model interpretations remain to be unfamiliar language to most clinicians, whose preferred interface for understanding and calculating risk consists of clinical scores. This is because clinical scores: (a) are concise therefore making them easy to remember, (b) can be easily correlated with the clinical context, and (c) can be calculated at the patient's bedside without a machine. Therefore, we propose a modified clinical scoring framework, called Unified Automatic Clinical Scoring (Uni-ACS), to translate ML models into clinical scores. This model-agnostic approach can automatically generate clinical scores while retaining a reasonable proportion of the underlying ML models' predictive performance. With Uni-ACS, ML derived clinical scores have the potential to provide clinicians with a consistent and familiar way to understand the underlying ML models, thus, increasing their acceptance into clinical medicine.
+## Background
+
+Modern interpretable ML tools (e.g. LIME, SHAP and explainable boosting machines) have made significant progress in explaining "black box" ML models. However, these tools' outputs continue to be unfamiliar to most clinicians. Clinicians' preferred tool of patient risk stratification remains to be clinical scores. Plausible reasons for such a preference as follows:
+- Clinical scores are concise, thus they are easy to remember.
+- Clinical scores can be easily correlated to the clinical context.
+- Clinical scores can be calculated at bedside without the assistance of a machine.
+Therefore, Uni-ACS aims to overcome this clinical translation problem by translating ML models into clinical scores.
 
 ## Requirements
 
