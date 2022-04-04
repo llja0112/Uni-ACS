@@ -19,4 +19,26 @@ Therefore, Uni-ACS aims to overcome this clinical translation problem by transla
 
 ## Quick Guide
 
-Coming up!
+### Start by importing Uni-ACS.
+```
+import medical_explainer
+```
+
+### Set up data and train the ML model
+Set up the dataset by splitting up into train and test set. Train your favourite ML model as `clf` on the train set. Calculate the performance metrics of the ML model on the test set. Run the following code to initialise the Uni-ACS medical explainer:
+
+```
+explainer = medical_explainer.explainer(
+    clf, X_train, y_train, X_test, y_test)
+```
+
+Run the automatic algorithm to translate ML model `clf` into the clinical score as shown in below code snippet. 
+- First parameter refers to the number of top model features to include into the clinical score. 
+- Second parameter refers to the SHAP method of calculation. Possible options include `tree` for ensemble decision tree models, `linear` for linear models and `kernel` for neural network models and other SHAP compatible models. 
+- Third parameter refers to the method of categorising the features. Possible options include `novel` for calculating categories based on feature partical dependence distribution, `qunatile` for determining categories based on centiles of feature value distributiuon and `GAM` for determining categories based on Generalised Additive Model (GAM) fit.
+
+```
+explainer.fit(10, shap_method='tree', method='novel')
+```
+
+### More details upcoming!
