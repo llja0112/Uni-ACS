@@ -41,4 +41,14 @@ Run the automatic algorithm to translate ML model `clf` into the clinical score 
 explainer.fit(10, shap_method='tree', method='novel')
 ```
 
-### More details upcoming!
+It will run through the steps as detailed in the algorithm proposed by the Uni-ACS paper. Output of the method as shown below:
+
+![Example process Image 1](Image1.png)
+
+![Example process Image 2](Image2.png)
+
+![Example process Image 3](Image3.png)
+
+### Citations
+
+Work In Progress at the moment. Paper yet to be published.
