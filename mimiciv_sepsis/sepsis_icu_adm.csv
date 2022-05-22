@@ -1,0 +1,277 @@
+,,Grouped by icu_adm_flag,Grouped by icu_adm_flag,Grouped by icu_adm_flag,Grouped by icu_adm_flag,Grouped by icu_adm_flag
+,,Missing,Overall,0,1,P-Value
+n,,,7690,5623,2067,
+"gender, n (%)",0,0,4101 (53.3),3093 (55.0),1008 (48.8),<0.001
+"gender, n (%)",1,,3589 (46.7),2530 (45.0),1059 (51.2),
+"myocardial_infarct, n (%)",0,0,6971 (90.7),5187 (92.2),1784 (86.3),<0.001
+"myocardial_infarct, n (%)",1,,719 (9.3),436 (7.8),283 (13.7),
+"congestive_heart_failure, n (%)",0,0,5930 (77.1),4599 (81.8),1331 (64.4),<0.001
+"congestive_heart_failure, n (%)",1,,1760 (22.9),1024 (18.2),736 (35.6),
+"peripheral_vascular_disease, n (%)",0,0,7108 (92.4),5243 (93.2),1865 (90.2),<0.001
+"peripheral_vascular_disease, n (%)",1,,582 (7.6),380 (6.8),202 (9.8),
+"cerebrovascular_disease, n (%)",0,0,7073 (92.0),5236 (93.1),1837 (88.9),<0.001
+"cerebrovascular_disease, n (%)",1,,617 (8.0),387 (6.9),230 (11.1),
+"dementia, n (%)",0,0,7314 (95.1),5356 (95.3),1958 (94.7),0.375
+"dementia, n (%)",1,,376 (4.9),267 (4.7),109 (5.3),
+"chronic_pulmonary_disease, n (%)",0,0,5569 (72.4),4225 (75.1),1344 (65.0),<0.001
+"chronic_pulmonary_disease, n (%)",1,,2121 (27.6),1398 (24.9),723 (35.0),
+"rheumatic_disease, n (%)",0,0,7343 (95.5),5388 (95.8),1955 (94.6),0.024
+"rheumatic_disease, n (%)",1,,347 (4.5),235 (4.2),112 (5.4),
+"peptic_ulcer_disease, n (%)",0,0,7577 (98.5),5554 (98.8),2023 (97.9),0.005
+"peptic_ulcer_disease, n (%)",1,,113 (1.5),69 (1.2),44 (2.1),
+"mild_liver_disease, n (%)",0,0,6858 (89.2),5125 (91.1),1733 (83.8),<0.001
+"mild_liver_disease, n (%)",1,,832 (10.8),498 (8.9),334 (16.2),
+"diabetes_without_cc, n (%)",0,0,5874 (76.4),4381 (77.9),1493 (72.2),<0.001
+"diabetes_without_cc, n (%)",1,,1816 (23.6),1242 (22.1),574 (27.8),
+"diabetes_with_cc, n (%)",0,0,7118 (92.6),5217 (92.8),1901 (92.0),0.249
+"diabetes_with_cc, n (%)",1,,572 (7.4),406 (7.2),166 (8.0),
+"paraplegia, n (%)",0,0,7508 (97.6),5518 (98.1),1990 (96.3),<0.001
+"paraplegia, n (%)",1,,182 (2.4),105 (1.9),77 (3.7),
+"renal_disease, n (%)",0,0,5859 (76.2),4378 (77.9),1481 (71.6),<0.001
+"renal_disease, n (%)",1,,1831 (23.8),1245 (22.1),586 (28.4),
+"malignant_cancer, n (%)",0,0,6559 (85.3),4855 (86.3),1704 (82.4),<0.001
+"malignant_cancer, n (%)",1,,1131 (14.7),768 (13.7),363 (17.6),
+"severe_liver_disease, n (%)",0,0,7366 (95.8),5421 (96.4),1945 (94.1),<0.001
+"severe_liver_disease, n (%)",1,,324 (4.2),202 (3.6),122 (5.9),
+"metastatic_solid_tumor, n (%)",0,0,7124 (92.6),5286 (94.0),1838 (88.9),<0.001
+"metastatic_solid_tumor, n (%)",1,,566 (7.4),337 (6.0),229 (11.1),
+"aids, n (%)",0,0,7604 (98.9),5564 (99.0),2040 (98.7),0.408
+"aids, n (%)",1,,86 (1.1),59 (1.0),27 (1.3),
+"admflag_last1yr, n (%)",0,0,6568 (85.4),4836 (86.0),1732 (83.8),0.016
+"admflag_last1yr, n (%)",1,,1122 (14.6),787 (14.0),335 (16.2),
+"time2bg_24hr_flag, n (%)",0,0,6422 (83.5),5387 (95.8),1035 (50.1),<0.001
+"time2bg_24hr_flag, n (%)",1,,1268 (16.5),236 (4.2),1032 (49.9),
+"ed_medgp_antidote, n (%)",0,0,7661 (99.6),5614 (99.8),2047 (99.0),<0.001
+"ed_medgp_antidote, n (%)",1,,29 (0.4),9 (0.2),20 (1.0),
+"ed_medgp_cardiovascular, n (%)",0,0,6307 (82.0),4977 (88.5),1330 (64.3),<0.001
+"ed_medgp_cardiovascular, n (%)",1,,1383 (18.0),646 (11.5),737 (35.7),
+"ed_medgp_coagulation, n (%)",0,0,7416 (96.4),5454 (97.0),1962 (94.9),<0.001
+"ed_medgp_coagulation, n (%)",1,,274 (3.6),169 (3.0),105 (5.1),
+"ed_medgp_diabetes, n (%)",0,0,7431 (96.6),5506 (97.9),1925 (93.1),<0.001
+"ed_medgp_diabetes, n (%)",1,,259 (3.4),117 (2.1),142 (6.9),
+"ed_medgp_electrolytes, n (%)",0,0,7311 (95.1),5418 (96.4),1893 (91.6),<0.001
+"ed_medgp_electrolytes, n (%)",1,,379 (4.9),205 (3.6),174 (8.4),
+"ed_medgp_gastrointestinal, n (%)",0,0,7251 (94.3),5238 (93.2),2013 (97.4),<0.001
+"ed_medgp_gastrointestinal, n (%)",1,,439 (5.7),385 (6.8),54 (2.6),
+"ed_medgp_metabolic_and_endocrine, n (%)",0,0,7376 (95.9),5343 (95.0),2033 (98.4),<0.001
+"ed_medgp_metabolic_and_endocrine, n (%)",1,,314 (4.1),280 (5.0),34 (1.6),
+"ed_medgp_multiple, n (%)",0,0,6478 (84.2),4974 (88.5),1504 (72.8),<0.001
+"ed_medgp_multiple, n (%)",1,,1212 (15.8),649 (11.5),563 (27.2),
+"ed_medgp_nervous_system, n (%)",0,0,6603 (85.9),4995 (88.8),1608 (77.8),<0.001
+"ed_medgp_nervous_system, n (%)",1,,1087 (14.1),628 (11.2),459 (22.2),
+"ed_medgp_others, n (%)",0,0,7602 (98.9),5545 (98.6),2057 (99.5),0.001
+"ed_medgp_others, n (%)",1,,88 (1.1),78 (1.4),10 (0.5),
+"ed_medgp_procedural_adjunct, n (%)",0,0,6781 (88.2),5106 (90.8),1675 (81.0),<0.001
+"ed_medgp_procedural_adjunct, n (%)",1,,909 (11.8),517 (9.2),392 (19.0),
+"ed_medgp_respiratory, n (%)",0,0,6773 (88.1),5036 (89.6),1737 (84.0),<0.001
+"ed_medgp_respiratory, n (%)",1,,917 (11.9),587 (10.4),330 (16.0),
+"ed_medgp_steroids, n (%)",0,0,7486 (97.3),5518 (98.1),1968 (95.2),<0.001
+"ed_medgp_steroids, n (%)",1,,204 (2.7),105 (1.9),99 (4.8),
+"ed_medgp_symptomatic, n (%)",0,0,4139 (53.8),3009 (53.5),1130 (54.7),0.381
+"ed_medgp_symptomatic, n (%)",1,,3551 (46.2),2614 (46.5),937 (45.3),
+"ed_medgp_urology, n (%)",0,0,7584 (98.6),5522 (98.2),2062 (99.8),<0.001
+"ed_medgp_urology, n (%)",1,,106 (1.4),101 (1.8),5 (0.2),
+"ed_medgp_wound, n (%)",0,0,7643 (99.4),5587 (99.4),2056 (99.5),0.708
+"ed_medgp_wound, n (%)",1,,47 (0.6),36 (0.6),11 (0.5),
+"ed_a_azithromycin, n (%)",0,0,6974 (90.7),5046 (89.7),1928 (93.3),<0.001
+"ed_a_azithromycin, n (%)",1,,716 (9.3),577 (10.3),139 (6.7),
+"ed_a_cefepime, n (%)",0,0,6707 (87.2),5119 (91.0),1588 (76.8),<0.001
+"ed_a_cefepime, n (%)",1,,983 (12.8),504 (9.0),479 (23.2),
+"ed_a_ceftriaxone, n (%)",0,0,6723 (87.4),4844 (86.1),1879 (90.9),<0.001
+"ed_a_ceftriaxone, n (%)",1,,967 (12.6),779 (13.9),188 (9.1),
+"ed_a_ceftriaxone_mini_bag_plus, n (%)",0,0,6164 (80.2),4385 (78.0),1779 (86.1),<0.001
+"ed_a_ceftriaxone_mini_bag_plus, n (%)",1,,1526 (19.8),1238 (22.0),288 (13.9),
+"ed_a_ciprofloxacin, n (%)",0,0,7163 (93.1),5166 (91.9),1997 (96.6),<0.001
+"ed_a_ciprofloxacin, n (%)",1,,527 (6.9),457 (8.1),70 (3.4),
+"ed_a_levofloxacin, n (%)",0,0,6345 (82.5),4637 (82.5),1708 (82.6),0.891
+"ed_a_levofloxacin, n (%)",1,,1345 (17.5),986 (17.5),359 (17.4),
+"ed_a_metronidazole_flagyl, n (%)",0,0,7412 (96.4),5487 (97.6),1925 (93.1),<0.001
+"ed_a_metronidazole_flagyl, n (%)",1,,278 (3.6),136 (2.4),142 (6.9),
+"ed_a_nitrofurantoin_monohy__macrobid, n (%)",0,0,7450 (96.9),5387 (95.8),2063 (99.8),<0.001
+"ed_a_nitrofurantoin_monohy__macrobid, n (%)",1,,240 (3.1),236 (4.2),4 (0.2),
+"ed_a_others, n (%)",0,0,7174 (93.3),5258 (93.5),1916 (92.7),0.225
+"ed_a_others, n (%)",1,,516 (6.7),365 (6.5),151 (7.3),
+"ed_a_piperacillin_tazobactam_na, n (%)",0,0,7151 (93.0),5392 (95.9),1759 (85.1),<0.001
+"ed_a_piperacillin_tazobactam_na, n (%)",1,,539 (7.0),231 (4.1),308 (14.9),
+"ed_a_vancomycin, n (%)",0,0,5792 (75.3),4661 (82.9),1131 (54.7),<0.001
+"ed_a_vancomycin, n (%)",1,,1898 (24.7),962 (17.1),936 (45.3),
+"age, mean (SD)",,0,69.3 (17.2),69.0 (17.6),70.1 (16.1),0.008
+"charlson_comorbidity_index, n (%)",0,0,302 (3.9),269 (4.8),33 (1.6),<0.001
+"charlson_comorbidity_index, n (%)",1,,330 (4.3),271 (4.8),59 (2.9),
+"charlson_comorbidity_index, n (%)",10,,352 (4.6),205 (3.6),147 (7.1),
+"charlson_comorbidity_index, n (%)",11,,213 (2.8),133 (2.4),80 (3.9),
+"charlson_comorbidity_index, n (%)",12,,110 (1.4),63 (1.1),47 (2.3),
+"charlson_comorbidity_index, n (%)",13,,75 (1.0),39 (0.7),36 (1.7),
+"charlson_comorbidity_index, n (%)",14,,32 (0.4),15 (0.3),17 (0.8),
+"charlson_comorbidity_index, n (%)",15,,14 (0.2),4 (0.1),10 (0.5),
+"charlson_comorbidity_index, n (%)",16,,8 (0.1),5 (0.1),3 (0.1),
+"charlson_comorbidity_index, n (%)",17,,4 (0.1),2 (0.0),2 (0.1),
+"charlson_comorbidity_index, n (%)",2,,387 (5.0),311 (5.5),76 (3.7),
+"charlson_comorbidity_index, n (%)",3,,556 (7.2),427 (7.6),129 (6.2),
+"charlson_comorbidity_index, n (%)",4,,1157 (15.0),953 (16.9),204 (9.9),
+"charlson_comorbidity_index, n (%)",5,,1159 (15.1),897 (16.0),262 (12.7),
+"charlson_comorbidity_index, n (%)",6,,1063 (13.8),757 (13.5),306 (14.8),
+"charlson_comorbidity_index, n (%)",7,,812 (10.6),546 (9.7),266 (12.9),
+"charlson_comorbidity_index, n (%)",8,,656 (8.5),427 (7.6),229 (11.1),
+"charlson_comorbidity_index, n (%)",9,,457 (5.9),299 (5.3),158 (7.6),
+"charlson_comorbidity_index, n (%)",18,,1 (0.0),,1 (0.0),
+"charlson_comorbidity_index, n (%)",19,,1 (0.0),,1 (0.0),
+"charlson_comorbidity_index, n (%)",20,,1 (0.0),,1 (0.0),
+"edvital_temperature_min, mean (SD)",,0,97.3 (6.7),97.8 (4.0),96.2 (11.1),<0.001
+"edvital_temperature_max, mean (SD)",,0,99.3 (10.7),99.4 (11.9),99.2 (6.6),0.346
+"edvital_temperature_median, mean (SD)",,0,98.2 (5.2),98.5 (2.2),97.4 (9.2),<0.001
+"edvital_heartrate_min, mean (SD)",,0,78.9 (16.8),76.7 (15.1),84.9 (19.6),<0.001
+"edvital_heartrate_max, mean (SD)",,0,97.1 (20.9),93.5 (18.4),106.8 (23.9),<0.001
+"edvital_heartrate_median, mean (SD)",,0,87.2 (17.7),84.3 (15.7),95.1 (20.3),<0.001
+"edvital_resprate_min, mean (SD)",,0,16.5 (3.0),16.2 (2.3),17.3 (4.3),<0.001
+"edvital_resprate_max, mean (SD)",,0,22.3 (6.2),20.8 (4.9),26.2 (7.3),<0.001
+"edvital_resprate_median, mean (SD)",,0,19.1 (3.8),18.2 (2.8),21.4 (5.2),<0.001
+"edvital_o2sat_min, mean (SD)",,0,94.8 (6.2),95.4 (5.1),93.2 (8.4),<0.001
+"edvital_o2sat_max, n (%)",100,0,3719 (48.4),2579 (45.9),1140 (55.2),<0.001
+"edvital_o2sat_max, n (%)",4,,1 (0.0),1 (0.0),,
+"edvital_o2sat_max, n (%)",84,,2 (0.0),1 (0.0),1 (0.0),
+"edvital_o2sat_max, n (%)",86,,1 (0.0),1 (0.0),,
+"edvital_o2sat_max, n (%)",87,,4 (0.1),1 (0.0),3 (0.1),
+"edvital_o2sat_max, n (%)",88,,5 (0.1),3 (0.1),2 (0.1),
+"edvital_o2sat_max, n (%)",89,,7 (0.1),2 (0.0),5 (0.2),
+"edvital_o2sat_max, n (%)",90,,8 (0.1),3 (0.1),5 (0.2),
+"edvital_o2sat_max, n (%)",91,,3 (0.0),1 (0.0),2 (0.1),
+"edvital_o2sat_max, n (%)",92,,22 (0.3),12 (0.2),10 (0.5),
+"edvital_o2sat_max, n (%)",93,,27 (0.4),19 (0.3),8 (0.4),
+"edvital_o2sat_max, n (%)",94,,86 (1.1),56 (1.0),30 (1.5),
+"edvital_o2sat_max, n (%)",95,,221 (2.9),156 (2.8),65 (3.1),
+"edvital_o2sat_max, n (%)",96,,414 (5.4),319 (5.7),95 (4.6),
+"edvital_o2sat_max, n (%)",97,,658 (8.6),515 (9.2),143 (6.9),
+"edvital_o2sat_max, n (%)",98,,1180 (15.3),927 (16.5),253 (12.2),
+"edvital_o2sat_max, n (%)",99,,1329 (17.3),1027 (18.3),302 (14.6),
+"edvital_o2sat_max, n (%)",63,,1 (0.0),,1 (0.0),
+"edvital_o2sat_max, n (%)",82,,1 (0.0),,1 (0.0),
+"edvital_o2sat_max, n (%)",988,,1 (0.0),,1 (0.0),
+"edvital_o2sat_median, n (%)",100.0,0,1289 (16.8),866 (15.4),423 (20.5),<0.001
+"edvital_o2sat_median, n (%)",4.0,,1 (0.0),1 (0.0),,
+"edvital_o2sat_median, n (%)",48.0,,1 (0.0),1 (0.0),,
+"edvital_o2sat_median, n (%)",58.0,,1 (0.0),1 (0.0),,
+"edvital_o2sat_median, n (%)",64.5,,1 (0.0),1 (0.0),,
+"edvital_o2sat_median, n (%)",84.0,,4 (0.1),2 (0.0),2 (0.1),
+"edvital_o2sat_median, n (%)",85.0,,4 (0.1),3 (0.1),1 (0.0),
+"edvital_o2sat_median, n (%)",86.0,,2 (0.0),1 (0.0),1 (0.0),
+"edvital_o2sat_median, n (%)",87.0,,5 (0.1),2 (0.0),3 (0.1),
+"edvital_o2sat_median, n (%)",87.5,,2 (0.0),1 (0.0),1 (0.0),
+"edvital_o2sat_median, n (%)",88.0,,7 (0.1),4 (0.1),3 (0.1),
+"edvital_o2sat_median, n (%)",89.0,,5 (0.1),2 (0.0),3 (0.1),
+"edvital_o2sat_median, n (%)",89.5,,3 (0.0),1 (0.0),2 (0.1),
+"edvital_o2sat_median, n (%)",90.0,,11 (0.1),4 (0.1),7 (0.3),
+"edvital_o2sat_median, n (%)",91.0,,17 (0.2),7 (0.1),10 (0.5),
+"edvital_o2sat_median, n (%)",91.5,,8 (0.1),3 (0.1),5 (0.2),
+"edvital_o2sat_median, n (%)",92.0,,63 (0.8),38 (0.7),25 (1.2),
+"edvital_o2sat_median, n (%)",92.5,,14 (0.2),9 (0.2),5 (0.2),
+"edvital_o2sat_median, n (%)",93.0,,125 (1.6),75 (1.3),50 (2.4),
+"edvital_o2sat_median, n (%)",93.5,,47 (0.6),27 (0.5),20 (1.0),
+"edvital_o2sat_median, n (%)",94.0,,259 (3.4),182 (3.2),77 (3.7),
+"edvital_o2sat_median, n (%)",94.5,,96 (1.2),69 (1.2),27 (1.3),
+"edvital_o2sat_median, n (%)",95.0,,572 (7.4),405 (7.2),167 (8.1),
+"edvital_o2sat_median, n (%)",95.5,,168 (2.2),129 (2.3),39 (1.9),
+"edvital_o2sat_median, n (%)",96.0,,780 (10.1),574 (10.2),206 (10.0),
+"edvital_o2sat_median, n (%)",96.5,,271 (3.5),217 (3.9),54 (2.6),
+"edvital_o2sat_median, n (%)",97.0,,1003 (13.0),767 (13.6),236 (11.4),
+"edvital_o2sat_median, n (%)",97.5,,292 (3.8),215 (3.8),77 (3.7),
+"edvital_o2sat_median, n (%)",98.0,,1152 (15.0),884 (15.7),268 (13.0),
+"edvital_o2sat_median, n (%)",98.5,,326 (4.2),262 (4.7),64 (3.1),
+"edvital_o2sat_median, n (%)",99.0,,918 (11.9),687 (12.2),231 (11.2),
+"edvital_o2sat_median, n (%)",99.5,,237 (3.1),183 (3.3),54 (2.6),
+"edvital_o2sat_median, n (%)",63.0,,1 (0.0),,1 (0.0),
+"edvital_o2sat_median, n (%)",77.5,,1 (0.0),,1 (0.0),
+"edvital_o2sat_median, n (%)",82.0,,2 (0.0),,2 (0.1),
+"edvital_o2sat_median, n (%)",90.5,,2 (0.0),,2 (0.1),
+"edvital_sbp_min, mean (SD)",,0,111.2 (23.2),116.2 (21.1),97.7 (23.1),<0.001
+"edvital_sbp_max, mean (SD)",,0,140.6 (23.8),143.3 (22.8),133.2 (24.8),<0.001
+"edvital_sbp_median, mean (SD)",,0,125.2 (21.3),129.2 (19.9),114.2 (20.8),<0.001
+"edvital_dbp_min, mean (SD)",,0,57.8 (13.5),60.1 (12.7),51.6 (13.7),<0.001
+"edvital_dbp_max, mean (SD)",,0,86.5 (199.1),89.2 (232.2),79.3 (27.2),0.002
+"edvital_dbp_median, mean (SD)",,0,68.0 (57.0),69.9 (66.1),62.7 (13.2),<0.001
+"fbc24hr_hematocrit_first, mean (SD)",,0,33.3 (6.0),33.7 (5.7),32.3 (6.5),<0.001
+"fbc24hr_hemoglobin_first, mean (SD)",,0,10.9 (2.0),11.0 (2.0),10.4 (2.2),<0.001
+"fbc24hr_mch_first, mean (SD)",,0,29.9 (2.9),29.9 (2.8),29.9 (2.9),0.966
+"fbc24hr_mchc_first, mean (SD)",,0,32.6 (1.6),32.7 (1.5),32.3 (1.7),<0.001
+"fbc24hr_mcv_first, mean (SD)",,0,91.7 (7.7),91.3 (7.5),92.7 (8.1),<0.001
+"fbc24hr_platelet_first, mean (SD)",,0,232.2 (123.4),236.4 (118.8),220.7 (134.5),<0.001
+"fbc24hr_rbc_first, mean (SD)",,0,3.7 (0.7),3.7 (0.7),3.5 (0.8),<0.001
+"fbc24hr_rdw_first, mean (SD)",,0,15.0 (2.1),14.7 (2.0),15.6 (2.4),<0.001
+"fbc24hr_wbc_first, mean (SD)",,0,10.4 (8.5),9.4 (7.5),13.1 (10.2),<0.001
+"chem24hr_aniongap_first, n (%)",10,0,346 (4.5),263 (4.7),83 (4.0),<0.001
+"chem24hr_aniongap_first, n (%)",11,,576 (7.5),451 (8.0),125 (6.0),
+"chem24hr_aniongap_first, n (%)",12,,784 (10.2),619 (11.0),165 (8.0),
+"chem24hr_aniongap_first, n (%)",13,,1016 (13.2),782 (13.9),234 (11.3),
+"chem24hr_aniongap_first, n (%)",14,,1039 (13.5),807 (14.4),232 (11.2),
+"chem24hr_aniongap_first, n (%)",15,,972 (12.6),745 (13.2),227 (11.0),
+"chem24hr_aniongap_first, n (%)",16,,765 (9.9),578 (10.3),187 (9.0),
+"chem24hr_aniongap_first, n (%)",17,,558 (7.3),406 (7.2),152 (7.4),
+"chem24hr_aniongap_first, n (%)",18,,397 (5.2),255 (4.5),142 (6.9),
+"chem24hr_aniongap_first, n (%)",19,,288 (3.7),184 (3.3),104 (5.0),
+"chem24hr_aniongap_first, n (%)",20,,175 (2.3),103 (1.8),72 (3.5),
+"chem24hr_aniongap_first, n (%)",21,,141 (1.8),72 (1.3),69 (3.3),
+"chem24hr_aniongap_first, n (%)",22,,87 (1.1),45 (0.8),42 (2.0),
+"chem24hr_aniongap_first, n (%)",23,,58 (0.8),30 (0.5),28 (1.4),
+"chem24hr_aniongap_first, n (%)",24,,46 (0.6),21 (0.4),25 (1.2),
+"chem24hr_aniongap_first, n (%)",25,,30 (0.4),11 (0.2),19 (0.9),
+"chem24hr_aniongap_first, n (%)",26,,12 (0.2),5 (0.1),7 (0.3),
+"chem24hr_aniongap_first, n (%)",27,,10 (0.1),1 (0.0),9 (0.4),
+"chem24hr_aniongap_first, n (%)",28,,14 (0.2),2 (0.0),12 (0.6),
+"chem24hr_aniongap_first, n (%)",29,,8 (0.1),3 (0.1),5 (0.2),
+"chem24hr_aniongap_first, n (%)",30,,9 (0.1),3 (0.1),6 (0.3),
+"chem24hr_aniongap_first, n (%)",31,,9 (0.1),3 (0.1),6 (0.3),
+"chem24hr_aniongap_first, n (%)",33,,7 (0.1),1 (0.0),6 (0.3),
+"chem24hr_aniongap_first, n (%)",34,,3 (0.0),1 (0.0),2 (0.1),
+"chem24hr_aniongap_first, n (%)",40,,3 (0.0),1 (0.0),2 (0.1),
+"chem24hr_aniongap_first, n (%)",5,,4 (0.1),2 (0.0),2 (0.1),
+"chem24hr_aniongap_first, n (%)",6,,10 (0.1),6 (0.1),4 (0.2),
+"chem24hr_aniongap_first, n (%)",7,,34 (0.4),21 (0.4),13 (0.6),
+"chem24hr_aniongap_first, n (%)",8,,86 (1.1),64 (1.1),22 (1.1),
+"chem24hr_aniongap_first, n (%)",9,,190 (2.5),138 (2.5),52 (2.5),
+"chem24hr_aniongap_first, n (%)",32,,4 (0.1),,4 (0.2),
+"chem24hr_aniongap_first, n (%)",35,,3 (0.0),,3 (0.1),
+"chem24hr_aniongap_first, n (%)",36,,1 (0.0),,1 (0.0),
+"chem24hr_aniongap_first, n (%)",41,,1 (0.0),,1 (0.0),
+"chem24hr_aniongap_first, n (%)",46,,1 (0.0),,1 (0.0),
+"chem24hr_aniongap_first, n (%)",49,,1 (0.0),,1 (0.0),
+"chem24hr_aniongap_first, n (%)",53,,1 (0.0),,1 (0.0),
+"chem24hr_aniongap_first, n (%)",59,,1 (0.0),,1 (0.0),
+"chem24hr_bun_first, mean (SD)",,0,25.7 (20.4),22.9 (17.2),33.2 (25.8),<0.001
+"chem24hr_chloride_first, mean (SD)",,0,102.9 (6.0),102.6 (5.4),103.7 (7.4),<0.001
+"chem24hr_glucose_first, mean (SD)",,0,128.6 (64.9),122.8 (56.2),144.4 (82.0),<0.001
+"marital_status_DIVORCED, n (%)",0,0,7107 (92.4),5188 (92.3),1919 (92.8),0.425
+"marital_status_DIVORCED, n (%)",1,,583 (7.6),435 (7.7),148 (7.2),
+"marital_status_MARRIED, n (%)",0,0,4718 (61.4),3454 (61.4),1264 (61.2),0.847
+"marital_status_MARRIED, n (%)",1,,2972 (38.6),2169 (38.6),803 (38.8),
+"marital_status_SINGLE, n (%)",0,0,5248 (68.2),3808 (67.7),1440 (69.7),0.110
+"marital_status_SINGLE, n (%)",1,,2442 (31.8),1815 (32.3),627 (30.3),
+"marital_status_UNKNOWN, n (%)",0,0,7542 (98.1),5571 (99.1),1971 (95.4),<0.001
+"marital_status_UNKNOWN, n (%)",1,,148 (1.9),52 (0.9),96 (4.6),
+"marital_status_WIDOWED, n (%)",0,0,6145 (79.9),4471 (79.5),1674 (81.0),0.162
+"marital_status_WIDOWED, n (%)",1,,1545 (20.1),1152 (20.5),393 (19.0),
+"ethnicity_BLACK/AFRICAN AMERICAN, n (%)",0,0,6486 (84.3),4682 (83.3),1804 (87.3),<0.001
+"ethnicity_BLACK/AFRICAN AMERICAN, n (%)",1,,1204 (15.7),941 (16.7),263 (12.7),
+"ethnicity_HISPANIC/LATINO, n (%)",0,0,7341 (95.5),5366 (95.4),1975 (95.5),0.872
+"ethnicity_HISPANIC/LATINO, n (%)",1,,349 (4.5),257 (4.6),92 (4.5),
+"ethnicity_OTHER, n (%)",0,0,7067 (91.9),5180 (92.1),1887 (91.3),0.256
+"ethnicity_OTHER, n (%)",1,,623 (8.1),443 (7.9),180 (8.7),
+"ethnicity_UNKNOWN, n (%)",0,0,7536 (98.0),5592 (99.4),1944 (94.0),<0.001
+"ethnicity_UNKNOWN, n (%)",1,,154 (2.0),31 (0.6),123 (6.0),
+"ethnicity_WHITE, n (%)",0,0,2330 (30.3),1672 (29.7),658 (31.8),0.081
+"ethnicity_WHITE, n (%)",1,,5360 (69.7),3951 (70.3),1409 (68.2),
+"insurance_Medicaid, n (%)",0,0,7124 (92.6),5235 (93.1),1889 (91.4),0.012
+"insurance_Medicaid, n (%)",1,,566 (7.4),388 (6.9),178 (8.6),
+"insurance_Medicare, n (%)",0,0,3460 (45.0),2588 (46.0),872 (42.2),0.003
+"insurance_Medicare, n (%)",1,,4230 (55.0),3035 (54.0),1195 (57.8),
+"insurance_Other, n (%)",0,0,4796 (62.4),3423 (60.9),1373 (66.4),<0.001
+"insurance_Other, n (%)",1,,2894 (37.6),2200 (39.1),694 (33.6),
+"antibiotic_a_lesse1, n (%)",0,0,6337 (82.4),5098 (90.7),1239 (59.9),<0.001
+"antibiotic_a_lesse1, n (%)",1,,1353 (17.6),525 (9.3),828 (40.1),
+"antibiotic_b_more1_lesse3, n (%)",0,0,5207 (67.7),3682 (65.5),1525 (73.8),<0.001
+"antibiotic_b_more1_lesse3, n (%)",1,,2483 (32.3),1941 (34.5),542 (26.2),
+"antibiotic_c_more3_lesse6, n (%)",0,0,5790 (75.3),3982 (70.8),1808 (87.5),<0.001
+"antibiotic_c_more3_lesse6, n (%)",1,,1900 (24.7),1641 (29.2),259 (12.5),
+"antibiotic_d_more6, n (%)",0,0,7107 (92.4),5087 (90.5),2020 (97.7),<0.001
+"antibiotic_d_more6, n (%)",1,,583 (7.6),536 (9.5),47 (2.3),
+"antibiotic_e_notgiven, n (%)",0,0,6319 (82.2),4643 (82.6),1676 (81.1),0.139
+"antibiotic_e_notgiven, n (%)",1,,1371 (17.8),980 (17.4),391 (18.9),
