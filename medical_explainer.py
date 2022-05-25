@@ -81,6 +81,7 @@ class explainer:
         self.calibrated_clf.fit(self.X_train, self.y_train)
 
     def calculate_kernel_shap(self):
+        self.calibrated_clf.fit(self.X_train.values, self.y_train.values)
         shap_values_list = []
         shap_expected_values_list = []
         i = 0
@@ -92,10 +93,11 @@ class explainer:
                 estimator = calibrated_classifier.base_estimator
 
             explainer = shap.KernelExplainer(
-                calibrated_classifier.base_estimator.predict_proba, self.X_train[:50])
-            shap_values = explainer.shap_values(self.X_train, nsamples=500)
+                calibrated_classifier.base_estimator.predict_proba, self.X_train[:50].values)
+            shap_values = explainer.shap_values(self.X_train[51:1000].values, nsamples=500)
 
             shap_values_post = shap_values[1] + explainer.expected_value[1]
+            # shap_values_post = shap_values + explainer.expected_value
             shap_values_post = np.where(shap_values_post >= 0.0001, shap_values_post, 0.0001)
             shap_values_post = np.where(shap_values_post <= 0.9999, shap_values_post, 0.9999)
 
@@ -337,7 +339,7 @@ class explainer:
             sorted_index = np.argsort(column_values)
             column_shap_values_sorted = column_shap_values[sorted_index]
             column_values_sorted = column_values[sorted_index]
-            
+
 
              # Calculate risks and odds ratio within each range
             column_actual_shap_values_sorted = np.add(
@@ -372,7 +374,7 @@ class explainer:
                 print(or_array)
                 print("")
 
-    def fit(self, top_n=10, verbose=False, method='novel', shap_method='linear', calculator_threshold=0.05):
+    def fit(self, top_n=10, verbose=False, method='novel', shap_method='linear', n_splits=5, calculator_threshold=0.05):
         # Feature selection with top SHAP values
 
         self.breakpoints_list = []
@@ -381,7 +383,7 @@ class explainer:
         self.or_array_list = []
         self.shap_max_score = 0
 
-        skf = StratifiedKFold(n_splits=5, random_state=self.seed, shuffle=True)
+        skf = StratifiedKFold(n_splits=n_splits, random_state=self.seed, shuffle=True)
 
         print('| Step 1  ==> Calibrating model')
         self.plot_calibration_original()
