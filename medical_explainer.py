@@ -93,16 +93,19 @@ class explainer:
                 estimator = calibrated_classifier.base_estimator
 
             explainer = shap.KernelExplainer(
-                calibrated_classifier.base_estimator.predict_proba, self.X_train[:50].values)
-            shap_values = explainer.shap_values(self.X_train[51:1000].values, nsamples=500)
+                calibrated_classifier.base_estimator.predict, self.X_train[:500].values)
+            shap_values = explainer.shap_values(self.X_train.values, nsamples=500)
+            # shap_values = explainer.shap_values(self.X_train[50:1000].values, nsamples=500)
 
-            shap_values_post = shap_values[1] + explainer.expected_value[1]
-            # shap_values_post = shap_values + explainer.expected_value
+            # shap_values_post = shap_values[1] + explainer.expected_value[1]
+            shap_values_post = shap_values + explainer.expected_value
             shap_values_post = np.where(shap_values_post >= 0.0001, shap_values_post, 0.0001)
             shap_values_post = np.where(shap_values_post <= 0.9999, shap_values_post, 0.9999)
 
+            # shap_values_list.append(shap_values_post)
             shap_values_list.append(logit(shap_values_post))
-            shap_expected_values_list.append(logit(explainer.expected_value[1]))
+            # shap_expected_values_list.append(explainer.expected_value[1])
+            shap_expected_values_list.append(logit(explainer.expected_value))
             i += 1
 
         self.shap_values = np.array(shap_values_list).sum(axis=0) / len(shap_values_list)
