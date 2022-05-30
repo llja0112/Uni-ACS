@@ -37,6 +37,9 @@ class explainer:
         self.or_array_list = []
         self.max_shap_score = 0
 
+        self.xs_array = []
+        self.ys_array = []
+
         self.unit_shap_value = 0
         self.score_array_list = []
 
@@ -239,10 +242,11 @@ class explainer:
 
         # Find the best fitting spline
         xs = np.linspace(x[0], x[-1], spline_sample_size)
-
         smoothing_result = csaps(x, y, xs)
-
         ys = smoothing_result.values
+
+        self.xs_array.append(xs)
+        self.ys_array.append(ys)
 
         if plot_graphs:
             plt.plot(x, y, 'o', xs, ys, '-')
@@ -301,6 +305,8 @@ class explainer:
         return range_arr, shap_array, p_array, or_array
 
     def find_breakpoints_novel(self, verbose=False):
+        self.xs_array = []
+        self.ys_array = []
         for variable in self.variables:
             breakpoints, shap_array, p_array, or_array = self.find_breakpoints(
                 variable, plot_graphs=False)
@@ -320,6 +326,8 @@ class explainer:
                 print("")
 
     def find_breakpoints_quantile(self, quantiles=[0.2, 0.5, 0.8], verbose=False):
+        self.xs_array = []
+        self.ys_array = []
         df_quantiles = self.X_train[self.variables].quantile(quantiles)
         for i in range(len(self.variables)):
             variable = self.variables[i]
