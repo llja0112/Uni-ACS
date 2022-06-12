@@ -13,8 +13,6 @@ from sklearn.metrics import roc_auc_score
 from sklearn.metrics import average_precision_score
 from sklearn.metrics import accuracy_score
 
-import pdb
-
 class explainer:
     def __init__(self, clf, X_train, y_train, X_test, y_test, p_thresholds=[0.1, 0.5, 0.9], pipeline_clf='Log_Reg', seed = 7):
         self.version = '0.1'
@@ -33,8 +31,10 @@ class explainer:
         self.variables = []
         self.breakpoints_list = []
         self.shap_array_list = []
-        self.p_array_list = []
-        self.or_array_list = []
+        self.shap_sd_array_list = []
+        self.shap_n_array_list = []
+        # self.p_array_list = []
+        # self.or_array_list = []
         self.max_shap_score = 0
 
         self.xs_array = []
@@ -271,7 +271,6 @@ class explainer:
                     gradient = (y2-y1)/(x2-x1)
                     intercept = y1 - gradient * x1
                     x_intercept = - intercept / gradient
-                    # range_arr.append(x_intercept)
 
                     end = x_intercept
                     range_index = np.where((column_values_sorted >= start) &
@@ -284,36 +283,43 @@ class explainer:
 
 
         # Calculate risks and odds ratio within each range
-        column_actual_shap_values_sorted = np.add(
-            column_shap_values_sorted, self.expected_value)
+        # column_actual_shap_values_sorted = np.add(
+        #     column_shap_values_sorted, self.expected_value)
 
         shap_array = []
-        p_array = []
-        or_array = []
+        shap_sd_array = []
+        shap_n_array = []
+        # p_array = []
+        # or_array = []
 
         for index in range(len(range_arr)):
             if index != 0:
                 range_index =  np.where((column_values_sorted >= range_arr[index-1]) &
                                         (column_values_sorted <= range_arr[index]))
 
-                mean_shap_value = np.mean(column_actual_shap_values_sorted[range_index])
+                # mean_shap_value = np.mean(column_actual_shap_values_sorted[range_index])
                 shap_array.append(np.mean(column_shap_values_sorted[range_index]))
-                p = expit(mean_shap_value)
-                p_array.append(p)
-                or_array.append(p/(1-p))
+                shap_sd_array.append(np.std(column_shap_values_sorted[range_index]))
+                shap_n_array.append(len(column_shap_values_sorted[range_index]))
+                # p = expit(mean_shap_value)
+                # p_array.append(p)
+                # or_array.append(p/(1-p))
 
-        return range_arr, shap_array, p_array, or_array
+        return range_arr, shap_array, shap_sd_array, shap_n_array#, p_array, or_array
 
     def find_breakpoints_novel(self, verbose=False):
         self.xs_array = []
         self.ys_array = []
         for variable in self.variables:
-            breakpoints, shap_array, p_array, or_array = self.find_breakpoints(
+            # breakpoints, shap_array, p_array, or_array = self.find_breakpoints(
+            breakpoints, shap_array, shap_sd_array, shap_n_array = self.find_breakpoints(
                 variable, plot_graphs=False)
             self.breakpoints_list.append(breakpoints)
             self.shap_array_list.append(shap_array)
-            self.p_array_list.append(p_array)
-            self.or_array_list.append(or_array)
+            self.shap_sd_array_list.append(shap_sd_array)
+            self.shap_n_array_list.append(shap_n_array)
+            # self.p_array_list.append(p_array)
+            # self.or_array_list.append(or_array)
 
             self.max_shap_score += np.max(shap_array)
 
@@ -321,8 +327,10 @@ class explainer:
                 print(variable)
                 print(breakpoints)
                 print(shap_array)
-                print(p_array)
-                print(or_array)
+                print(shap_sd_array)
+                print(shap_n_array)
+                # print(p_array)
+                # print(or_array)
                 print("")
 
     def find_breakpoints_quantile(self, quantiles=[0.2, 0.5, 0.8], verbose=False):
@@ -353,36 +361,44 @@ class explainer:
 
 
              # Calculate risks and odds ratio within each range
-            column_actual_shap_values_sorted = np.add(
-                column_shap_values_sorted, self.expected_value)
+            # column_actual_shap_values_sorted = np.add(
+            #     column_shap_values_sorted, self.expected_value)
 
             shap_array = []
-            p_array = []
-            or_array = []
+            shap_sd_array = []
+            shap_n_array = []
+            # p_array = []
+            # or_array = []
 
             for index in range(len(breakpoints)):
                 if index != 0:
                     range_index =  np.where((column_values_sorted >= breakpoints[index-1]) &
                                             (column_values_sorted <= breakpoints[index]))
 
-                    mean_shap_value = np.mean(column_actual_shap_values_sorted[range_index])
+                    # mean_shap_value = np.mean(column_actual_shap_values_sorted[range_index])
                     shap_array.append(np.mean(column_shap_values_sorted[range_index]))
-                    p = expit(mean_shap_value)
-                    p_array.append(p)
-                    or_array.append(p/(1-p))
+                    shap_sd_array.append(np.mean(column_shap_values_sorted[range_index]))
+                    shap_n_array.append(len(column_shap_values_sorted[range_index]))
+                    # p = expit(mean_shap_value)
+                    # p_array.append(p)
+                    # or_array.append(p/(1-p))
 
             self.breakpoints_list.append(breakpoints)
             self.shap_array_list.append(shap_array)
-            self.p_array_list.append(p_array)
-            self.or_array_list.append(or_array)
+            self.shap_sd_array_list.append(shap_sd_array)
+            self.shap_n_array_list.append(shap_n_array)
+            # self.p_array_list.append(p_array)
+            # self.or_array_list.append(or_array)
             self.max_shap_score += np.max(shap_array)
 
             if verbose:
                 print(variable)
                 print(breakpoints)
                 print(shap_array)
-                print(p_array)
-                print(or_array)
+                print(shap_sd_array)
+                print(shap_n_array)
+                # print(p_array)
+                # print(or_array)
                 print("")
 
     def fit(self, top_n=10, verbose=False, method='novel', shap_method='linear', n_splits=5, calculator_threshold=0.05):
@@ -390,8 +406,10 @@ class explainer:
 
         self.breakpoints_list = []
         self.shap_array_list = []
-        self.p_array_list = []
-        self.or_array_list = []
+        self.shap_sd_array_list = []
+        self.shap_n_array = []
+        # self.p_array_list = []
+        # self.or_array_list = []
         self.shap_max_score = 0
 
         skf = StratifiedKFold(n_splits=n_splits, random_state=self.seed, shuffle=True)
@@ -593,3 +611,52 @@ class explainer:
             self.score_thresholds.append(score_threshold)
             print("Score threshold: " + str(score_threshold))
             print("")
+
+    # Prototype method
+    def print_calculator(self):
+        i = 0
+        import math
+        for variable in self.variables:
+            shap_array = self.shap_array_list[i]
+            breakpoints = self.breakpoints_list[i]
+            shap_sd_array = self.shap_sd_array_list[i]
+            shap_n_array = self.shap_n_array_list[i]
+            
+            min_shap_value = np.min(shap_array)
+            min_shap_value_index = np.argmin(shap_array)
+            min_shap_value_sd = shap_sd_array[min_shap_value_index]
+            min_shap_value_n = shap_n_array[min_shap_value_index]
+            
+            j = 0
+            for shap_value in shap_array:
+                if j == 0:
+                    upper_threshold = round(breakpoints[j+1], 2)
+                    print(variable + "<=" + str(upper_threshold))
+                elif j+1 < len(shap_array):
+                    lower_threshold = round(breakpoints[j], 2)
+                    upper_threshold = round(breakpoints[j+1], 2)
+                    print(str(lower_threshold) + "<" 
+                        + variable + "<=" 
+                        + str(upper_threshold))
+                else:
+                    lower_threshold = round(breakpoints[j], 2)
+                    print(str(lower_threshold) + "<" + variable)
+                
+                diff_shap_value = shap_value - min_shap_value
+                odds_ratio = math.exp(diff_shap_value)
+                odds_ratio = round(odds_ratio, 3)        
+                print("Odds Ratio: " + str(odds_ratio))
+        
+                if j != min_shap_value_index:
+                    shap_value_sd = shap_sd_array[j]
+                    shap_value_n = shap_n_array[j]
+                    sd = math.sqrt(((shap_value_n-1)*shap_value_sd + (min_shap_value_n-1)*min_shap_value_sd)/(shap_value_n+min_shap_value_n-2))
+                    se = sd * math.sqrt(1/shap_value_n + 1/min_shap_value_n)
+                    odds_ratio_upper = round(math.exp(diff_shap_value + se*1.96),3)
+                    odds_ratio_lower = round(math.exp(diff_shap_value - se*1.96),3)
+                    print("Confidence interval: " + str(odds_ratio_lower) + ", " + str(odds_ratio_upper))
+                
+                j+=1
+
+            print()
+            i+=1
