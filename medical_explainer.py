@@ -543,7 +543,6 @@ class explainer:
         )
 
     def fit_calculator(self, calculator_threshold=0.05):
-        # shap_array_list = explainer.shap_array_list
         index = 0
         for shap_array in self.shap_array_list:
             shap_array = np.array(shap_array)
@@ -552,7 +551,6 @@ class explainer:
                 self.unit_shap_value = np.min(np.absolute(shap_values_no_zeros))
             index += 1
 
-        # score_array_list = []
         self.score_array_list = []
         for shap_array in self.shap_array_list:
             self.score_array_list.append(np.rint(np.true_divide(
@@ -580,7 +578,6 @@ class explainer:
 
             prob = expit(i * self.unit_shap_value + self.expected_value)
             new_row = pd.DataFrame([[score, prob]],columns=self.scoring_table_columns)
-            # self.scoring_table = self.scoring_table.append(new_row)
             self.scoring_table = pd.concat([self.scoring_table, new_row])
 
             i += 1
