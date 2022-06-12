@@ -660,3 +660,47 @@ class explainer:
 
             print()
             i+=1
+
+    def plot_calculator_features(self, titles=None):
+        shap_values_df = pd.DataFrame(self.shap_values, columns=self.X_train.columns)
+
+        plt.figure(figsize=(16, 6))
+
+        if not titles:
+            titles = self.variables
+        # titles = ["LOS (Days)", "RDW", "ICU LOS (Days)", "Age (years old)", "No. of Inotropes",
+        #         "LDH (U/L)", "Haptoglobin (mg/dL)", "Phosphate (mmol/L)", "No. of ICU stays", "Albumin (g/dL)"]
+        j = 0
+        for variable in self.variables:
+            # print(variable)
+            x = self.X_train[variable].values
+            y = shap_values_df[variable].values
+
+            y = y[np.argsort(x)]
+            x = x[np.argsort(x)]
+
+            score_x = []
+            score_y = []
+            
+            i = 0
+            for score in self.shap_array_list[j]:
+                score_x.append(self.breakpoints_list[j][i])
+                score_y.append(score)
+                score_x.append(self.breakpoints_list[j][i+1])
+                score_y.append(score)
+                i+=1
+                
+            xs = self.xs_array[j]
+            ys = self.ys_array[j]
+
+            #plt.subplots() 
+            plt.subplot(2, 5, j+1)
+            plt.scatter(x, y, s=2, c='lightblue')
+            plt.plot(xs, ys, c='navy')
+            plt.plot(score_x, score_y, c='gold')
+            plt.axhline(0, linestyle='--', color='gray')
+            plt.title(titles[j])
+            j+=1
+
+        plt.subplots_adjust(hspace=0.3)
+        plt.show()
